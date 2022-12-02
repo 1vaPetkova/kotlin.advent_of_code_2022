@@ -2,10 +2,10 @@ package day1
 
 import java.io.File
 
+const val PATH = "src/main/kotlin/input/input1.txt"
 fun main() {
-    val path = "src/main/kotlin/input/input_1.txt"
 
-    val allElvesCalories = calculateCaloriesInEachElf(readFile(path))
+    val allElvesCalories = calculateCaloriesInEachElf(readInput(PATH))
     //part 1
     print(allElvesCalories.max())
 
@@ -15,7 +15,7 @@ fun main() {
 }
 
 //================================================================================================================
-fun readFile(path: String): List<String> {
+fun readInput(path: String): List<String> {
     return File(path).readText().split("\n\n").stream().toList()
 }
 fun calculateCaloriesInEachElf(lines: List<String>): List<Int> {
