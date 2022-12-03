@@ -15,22 +15,22 @@ fun main() {
         2 -> getResultForPart2()
     }
 }
-fun getResultForPart1() {
-    readInput(PATH).forEach {
+private fun getResultForPart1() {
+    readInput().forEach {
         total += getRoundResultPartOne(it)
     }
-    print("\nTotal score: $total\n")
+    println("Total score: $total")
 }
-fun getResultForPart2() {
-    readInput(PATH).forEach {
+private fun getResultForPart2() {
+    readInput().forEach {
         total += getRoundResultPartTwo(it)
     }
-    print("Total score: $total\n")
+    println("Total score: $total")
 }
 
 //================================================================================================================
-fun readInput(path: String): List<Pair<String, String>> {
-    return File(path).readLines().map {
+private fun readInput(): List<Pair<String, String>> {
+    return File(PATH).readLines().map {
         val tokens = it.split("\\s+".toRegex())
         Pair(tokens[0], tokens[1])
     }.toList()
