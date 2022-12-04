@@ -4,7 +4,7 @@ import java.io.File
 
 const val DRAW_POINTS = 3
 const val WIN_POINTS = 6
-const val PATH = "src/main/kotlin/input/input2.txt"
+private const val PATH = "src/main/kotlin/input/input2.txt"
 var part = 0
 var total = 0
 fun main() {

@@ -14,7 +14,6 @@ fun main() {
         1 -> getResultForPart1()
         2 -> getResultForPart2()
     }
-
 }
 
 //================================================================================================================
@@ -24,7 +23,7 @@ private fun getResultForPart2() {
     println(totalPriorities)
 }
 
-private fun getResultForPart1() {
+fun getResultForPart1() {
     readInput().forEach { totalPriorities += findCharPriority(findPriorityInEachLine(it)) }
     println(totalPriorities)
 }
