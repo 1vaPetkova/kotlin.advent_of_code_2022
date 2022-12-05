@@ -2,7 +2,7 @@ package day5
 
 import java.io.File
 
-const val PATH = "src/main/kotlin/input/input5_ex.txt"
+const val PATH = "src/main/kotlin/input/input5.txt"
 var part = 0
 val inputParts = readInput()
 val stacks = arrangeStacks(inputParts[0])
@@ -27,6 +27,7 @@ private fun findTopCrates() {
     }
     println(builder)
 }
+
 private fun makeMovementForPartTwo(movement: Movement) {
 
     val temp = ArrayDeque<String>()
@@ -34,18 +35,20 @@ private fun makeMovementForPartTwo(movement: Movement) {
         temp.addFirst(stacks[movement.sourceStack][0])
         stacks[movement.sourceStack].removeFirst()
     }
-    temp.forEach {stacks[movement.destinationStack].addFirst(it) }
+    temp.forEach { stacks[movement.destinationStack].addFirst(it) }
 }
+
 private fun makeMovementForPartOne(movement: Movement) {
     for (count in 0 until movement.elementsMoved) {
         stacks[movement.destinationStack].addFirst(stacks[movement.sourceStack].first())
         stacks[movement.sourceStack].removeFirst()
     }
 }
+
 private fun arrangeMovements(line: String): List<Movement> {
     return line.split("\n").map {
         val tokens = it.split("\\s+".toRegex())
-       Movement(tokens[1].toInt(),tokens[3].toInt() - 1, tokens[5].toInt() - 1)
+        Movement(tokens[1].toInt(), tokens[3].toInt() - 1, tokens[5].toInt() - 1)
     }.toList()
 }
 
@@ -54,27 +57,19 @@ private fun arrangeStacks(inputPart: String): List<ArrayDeque<String>> {
     val columns = crates[crates.size - 1].trim().split("\\s+".toRegex()).last().toInt()
     crates = crates.subList(0, crates.size - 1)
 
-    val tokens = mutableListOf<List<String>>()
-    crates.forEach {
-        val list = mutableListOf<String>()
-        val line = it.toCharArray()
-        for (index in line.indices step 4) {
-                if (line[index] == '[') list.add(line[index+1].toString()) else list.add("*")
-            }
-        tokens.add(list)
+    val stacks = mutableListOf<ArrayDeque<String>>()
+    for (i in 0 until columns) {
+        stacks.add(ArrayDeque())
     }
 
-    val stacks = mutableListOf<ArrayDeque<String>>()
-    for (column in 0 until columns) {
-        val stack = ArrayDeque<String>()
-        for (row in tokens.indices) {
-            val elements = tokens[row]
-            if (column < elements.size && elements[column] != "*") {
-                stack.add(tokens[row][column])
+    crates.forEach { crate ->
+       for (index in 1 until crate.length step 4) {
+                val element = crate[index].toString()
+                if (!element.matches("\\s".toRegex())) {
+                    stacks[index/4].addLast(element)
+                }
             }
         }
-        stacks.add(stack)
-    }
     return stacks
 }
 
