@@ -58,9 +58,7 @@ private fun arrangeStacks(inputPart: String): List<ArrayDeque<String>> {
     crates = crates.subList(0, crates.size - 1)
 
     val stacks = mutableListOf<ArrayDeque<String>>()
-    for (i in 0 until columns) {
-        stacks.add(ArrayDeque())
-    }
+    repeat(columns) { stacks.add(ArrayDeque())}
 
     crates.forEach { crate ->
        for (index in 1 until crate.length step 4) {
