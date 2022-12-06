@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37733148-d7b0-4127-b6cf-cfe55fd5f6c8" name="Changes" comment="day 5 solution">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day5/Day5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day5/Day5.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/day6/Day6.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input6_ex.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package-info" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -57,7 +61,7 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/Day2" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day5Kt">
+  <component name="RunManager" selected="Kotlin.Day6Kt">
     <configuration name="Day2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day2.Day2Kt" />
       <module name="advent_of_code_2022" />
@@ -86,8 +90,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day6Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day6.Day6Kt" />
+      <module name="advent_of_code_2022" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Day6Kt" />
         <item itemvalue="Kotlin.Day5Kt" />
         <item itemvalue="Kotlin.Day4Kt" />
         <item itemvalue="Kotlin.Day3Kt" />
