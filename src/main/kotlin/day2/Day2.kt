@@ -46,7 +46,7 @@ fun getPoints(token: String): Int {
     }
     return 0
 }
-fun getRoundResultPartOne(token: Pair<String, String>): Int {
+private fun getRoundResultPartOne(token: Pair<String, String>): Int {
     val myPoints = getPoints(token.second)
     return if (isWin(token)) {
         myPoints + WIN_POINTS
@@ -56,7 +56,7 @@ fun getRoundResultPartOne(token: Pair<String, String>): Int {
         myPoints
     }
 }
-fun getRoundResultPartTwo(token: Pair<String, String>): Int {
+private fun getRoundResultPartTwo(token: Pair<String, String>): Int {
     return if (isWin(token)) {
         (getPoints(findMyWinToken(token.first)) + WIN_POINTS)
     } else if (isDraw(token)) {
@@ -65,7 +65,7 @@ fun getRoundResultPartTwo(token: Pair<String, String>): Int {
         (getPoints(findMyLoseToken(token.first)))
     }
 }
-fun findMyWinToken(first: String): String {
+private fun findMyWinToken(first: String): String {
     when (first) {
         "A" -> return "B"
         "B" -> return "C"
@@ -74,7 +74,7 @@ fun findMyWinToken(first: String): String {
     return "D"
 }
 
-fun findMyLoseToken(first: String): String {
+private fun findMyLoseToken(first: String): String {
     when (first) {
         "A" -> return "C"
         "B" -> return "A"

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37733148-d7b0-4127-b6cf-cfe55fd5f6c8" name="Changes" comment="day 5 solution">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/day7/Day7.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input7_ex.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day6/Day6.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day6/Day6.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day2/Day2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day2/Day2.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
       <list>
         <option value="package-info" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -59,14 +63,7 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/Day2" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day6Kt">
-    <configuration name="Day2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day2.Day2Kt" />
-      <module name="advent_of_code_2022" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.Day7Kt">
     <configuration name="Day3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day3.Day3Kt" />
       <module name="advent_of_code_2022" />
@@ -95,13 +92,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day7Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day7.Day7Kt" />
+      <module name="advent_of_code_2022" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Day7Kt" />
         <item itemvalue="Kotlin.Day6Kt" />
         <item itemvalue="Kotlin.Day5Kt" />
         <item itemvalue="Kotlin.Day4Kt" />
         <item itemvalue="Kotlin.Day3Kt" />
-        <item itemvalue="Kotlin.Day2Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -136,11 +140,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/day3/Day3.kt</url>
           <line>42</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/day6/Day6.kt</url>
-          <line>20</line>
-          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
