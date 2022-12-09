@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37733148-d7b0-4127-b6cf-cfe55fd5f6c8" name="Changes" comment="day 5 solution">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/day8/Day8.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input8_ex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input9_ex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input9_ex2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day8/Day8.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day8/Day8.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,14 +64,7 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/Day2" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day8Kt">
-    <configuration name="Day4Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day4.Day4Kt" />
-      <module name="advent_of_code_2022" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.Day9Kt">
     <configuration name="Day5Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day5.Day5Kt" />
       <module name="advent_of_code_2022" />
@@ -98,13 +93,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day9Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day9.Day9Kt" />
+      <module name="advent_of_code_2022" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Day9Kt" />
         <item itemvalue="Kotlin.Day8Kt" />
         <item itemvalue="Kotlin.Day7Kt" />
         <item itemvalue="Kotlin.Day6Kt" />
         <item itemvalue="Kotlin.Day5Kt" />
-        <item itemvalue="Kotlin.Day4Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +142,38 @@
           <line>42</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
+          <line>17</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
+          <line>22</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
+          <line>20</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
+          <line>48</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="elements" language="kotlin" />
+        <watch expression="elements.first()" language="kotlin" />
+        <watch expression="tailPositions" language="kotlin" />
+        <watch expression="elements.last()" language="kotlin" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -7,13 +7,20 @@ val trees = readInput()
 val rows = trees.size
 var visibleTrees = 2 * rows + 2 * trees[0].size - 4
 val scores = mutableListOf<Int>()
+var part = 0
+
 fun main() {
     checkVisibility()
-    println(visibleTrees)
-    println(scores.max())
+    println("Select part:")
+    part = readln().toInt()
+    when (part) {
+        1 -> println(visibleTrees)
+        2 -> println(scores.max())
+    }
 }
 
 //================================================================================================================
+
 private fun checkVisibility() {
     for (rowIndex in 1 until rows - 1) {
         val row = trees[rowIndex]
@@ -32,7 +39,6 @@ private fun calculateScenicScore(digit: Int, rowIndex: Int, colIndex: Int): Int 
             calculateFrom(getTopSubList(rowIndex, colIndex).reversed(), digit) *
             calculateFrom(getRightSubList(rowIndex, colIndex), digit) *
             calculateFrom(getDownSubList(rowIndex, colIndex), digit)
-
 }
 private fun calculateFrom(subList: List<Int>, digit: Int): Int {
     val index = subList.indexOfFirst { it >= digit }
