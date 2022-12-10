@@ -9,7 +9,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input10.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input10_ex.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input10_ex2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,15 +141,22 @@
           <line>42</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day10/Day10.kt</url>
+          <line>17</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day10/Day10.kt</url>
+          <line>15</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day10/Day10.kt</url>
+          <line>29</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JetRunConfigurationType">
-        <watch expression="elements" language="kotlin" />
-        <watch expression="elements.first()" language="kotlin" />
-        <watch expression="tailPositions" language="kotlin" />
-        <watch expression="elements.last()" language="kotlin" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
