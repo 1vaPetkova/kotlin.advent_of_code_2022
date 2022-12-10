@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37733148-d7b0-4127-b6cf-cfe55fd5f6c8" name="Changes" comment="day 5 solution">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input9.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input9_ex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input9_ex2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day8/Day8.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day8/Day8.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,29 +136,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/day3/Day3.kt</url>
           <line>42</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
-          <line>17</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
-          <line>22</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
-          <line>20</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/day9/Day9.kt</url>
-          <line>48</line>
-          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

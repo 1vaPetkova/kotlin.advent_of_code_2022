@@ -2,7 +2,7 @@ package day9
 
 
 import java.io.File
-import kotlin.math.abs
+import kotlin.math.*
 
 const val PATH = "src/main/kotlin/input/input9.txt"
 var part = 0
@@ -46,16 +46,9 @@ fun makeHeadMovement(deltaRow: Int, deltaCol: Int) {
 private fun moveSecondElement(index: Int) {
     val diffCol = elements[index - 1].col - elements[index].col
     val diffRow = elements[index - 1].row - elements[index].row
-    if (abs(diffCol) > 1) {
-        elements[index].col += if (diffCol < 0) -1 else +1
-        if (diffRow != 0) {
-            elements[index].row += if (diffRow < 0) -1 else +1
-        }
-    } else if (abs(diffRow) > 1) {
-        elements[index].row += if (diffRow < 0) -1 else +1
-        if (diffCol != 0) {
-            elements[index].col += if (diffCol < 0) -1 else +1
-        }
+    if (abs(diffCol) > 1 || abs(diffRow) > 1) {
+        elements[index].col += diffCol.sign()
+        elements[index].row += diffRow.sign()
     }
 }
 
@@ -88,4 +81,6 @@ data class Element(
     var row: Int,
     var col: Int
 )
+
+fun Int.sign() = if (this == 0) { 0 } else if (this < 0 ) { -1 } else { 1 }
 
