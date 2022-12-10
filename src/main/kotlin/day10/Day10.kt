@@ -43,15 +43,13 @@ private fun handleAddInstructionPartTwo(value: Int) {
     xValue += value
 }
 
-fun resetCycleIfNeeded() {
-    if (cycle >= 40) cycle = 0
-}
-
 private fun handleNoopInstructionPartTwo() {
     cycle++
     draw()
     resetCycleIfNeeded()
 }
+
+fun resetCycleIfNeeded() { if (cycle >= 40) cycle = 0 }
 
 private fun draw() = if (cycle - 1 in xValue - 1..xValue + 1) output.append("#") else output.append(" ")
 
