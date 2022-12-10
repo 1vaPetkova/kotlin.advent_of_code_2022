@@ -27,6 +27,8 @@ fun main() {
     println(tailPositions.size)
 }
 
+//================================================================================================================
+
 fun moveHead(direction: String) {
     when (direction) {
         "R" -> makeHeadMovement(0, +1)
@@ -41,8 +43,6 @@ fun makeHeadMovement(deltaRow: Int, deltaCol: Int) {
     elements.first().row += deltaRow
 }
 
-//================================================================================================================
-
 private fun moveSecondElement(index: Int) {
     val diffCol = elements[index - 1].col - elements[index].col
     val diffRow = elements[index - 1].row - elements[index].row
@@ -50,11 +50,6 @@ private fun moveSecondElement(index: Int) {
         elements[index].col += diffCol.sign()
         elements[index].row += diffRow.sign()
     }
-}
-
-private fun readInput() = File(PATH).readLines().map {
-    val tokens = it.split("\\s+".toRegex())
-    Pair(tokens[0], tokens[1].toInt())
 }
 
 private fun getListOfElement(): List<Element> {
@@ -82,5 +77,10 @@ data class Element(
     var col: Int
 )
 
-fun Int.sign() = if (this == 0) { 0 } else if (this < 0 ) { -1 } else { 1 }
+private fun Int.sign() = if (this == 0) { 0 } else if (this < 0 ) { -1 } else { 1 }
+
+private fun readInput() = File(PATH).readLines().map {
+    val tokens = it.split("\\s+".toRegex())
+    Pair(tokens[0], tokens[1].toInt())
+}
 

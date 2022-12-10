@@ -5,7 +5,7 @@ import java.io.File
 const val PATH = "src/main/kotlin/input/input1.txt"
 fun main() {
 
-    val allElvesCalories = calculateCaloriesInEachElf(readInput(PATH))
+    val allElvesCalories = calculateCaloriesInEachElf(readInput())
     //part 1
     print(allElvesCalories.max())
 
@@ -15,10 +15,10 @@ fun main() {
 }
 
 //================================================================================================================
-fun readInput(path: String): List<String> {
-    return File(path).readText().split("\n\n").stream().toList()
+private fun readInput(): List<String> {
+    return File(PATH).readText().split("\n\n").stream().toList()
 }
-fun calculateCaloriesInEachElf(lines: List<String>): List<Int> {
+private fun calculateCaloriesInEachElf(lines: List<String>): List<Int> {
     return lines.map { line ->
         line.split("\n").map { it.toInt() }.toList().sum()
     }.toList()
