@@ -81,7 +81,7 @@ private fun addXValueIfNeeded() {
     }
 }
 
-fun getResultsMap(): MutableMap<Int, Int> {
+private fun getResultsMap(): MutableMap<Int, Int> {
     val map = mutableMapOf<Int, Int>()
     var currentCycle = 20
     while (currentCycle <= 220) {
