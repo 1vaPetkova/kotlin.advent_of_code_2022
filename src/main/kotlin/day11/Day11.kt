@@ -3,23 +3,41 @@ package day11
 import java.io.File
 import kotlin.math.floor
 
-const val PATH = "src/main/kotlin/input/input11.txt"
+const val PATH = "src/main/kotlin/input/input11_ex.txt"
 var part = 0
 val input = readInput()
 val monkeys = mutableListOf<Monkey>()
+var reduction = 1
+var rounds = 1
+
 fun main() {
     input.forEach { mapMonkey(it) }
-    repeat(20) {
+    println("Select part:")
+    part = readln().toInt()
+    when (part) {
+        1 -> {
+            rounds = 20
+            reduction = 3
+        }
+        2 -> {
+            rounds = 10000
+            reduction = 1
+        }
+    }
+    findResult()
+}
+
+//================================================================================================================
+fun findResult() {
+    repeat(rounds) {
         monkeys.forEach {
             inspectItems(it)
         }
     }
-    var result = 1
+    var result = 1L
     monkeys.sortedByDescending { it.totalInspectedItems }.subList(0, 2).map { result *= it.totalInspectedItems }
     print(result)
 }
-
-//================================================================================================================
 
 fun inspectItems(monkey: Monkey) {
     while (monkey.items.isNotEmpty()) {
@@ -29,7 +47,7 @@ fun inspectItems(monkey: Monkey) {
 
 fun inspectCurrentItem(monkey: Monkey, old: Int) {
     monkey.operation.old = old
-    val worryLevel = floor(monkey.operation.getNewValue().toDouble() / 3).toInt()
+    val worryLevel = monkey.operation.getWorryLevel()
     if (monkey.getTestResult(worryLevel))
         monkeys[monkey.destinationMonkeyIfTrue].items.add(worryLevel)
     else
@@ -95,7 +113,7 @@ data class Monkey(
     var divisibleBy: Int = 1,
     var destinationMonkeyIfTrue: Int = 0,
     var destinationMonkeyIfFalse: Int = 0,
-    var totalInspectedItems: Int = 0
+    var totalInspectedItems: Long = 0
 ) {
     fun getTestResult(worryLevel: Int) = worryLevel % divisibleBy == 0
 }
@@ -106,12 +124,15 @@ data class Operation(
     var secondOperand: Int
 ) {
     private fun getSecond(): Int = if (secondOperand == -1) old else secondOperand
-    fun getNewValue() = when (operator) {
-        "+" -> old + getSecond()
-        "-" -> old - getSecond()
-        "*" -> old * getSecond()
-        "/" -> old / getSecond()
-        else -> 0
+    fun getWorryLevel(): Int {
+        val midValue: Number = when (operator) {
+            "+" -> old + getSecond()
+            "-" -> old - getSecond()
+            "*" -> old * getSecond()
+            "/" -> old.toDouble() / getSecond()
+            else -> 0
+        }
+        return floor(midValue.toDouble() / reduction).toInt()
     }
 }
 

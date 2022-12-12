@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37733148-d7b0-4127-b6cf-cfe55fd5f6c8" name="Changes" comment="day 5 solution">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/day11/Day11.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/input/input11_ex.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day10/Day10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day10/Day10.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day11/Day11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/day11/Day11.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +138,25 @@
           <line>42</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day11/Day11.kt</url>
+          <line>34</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day11/Day11.kt</url>
+          <line>123</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/day11/Day11.kt</url>
+          <line>141</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/kotlin_advent_of_code_2022$Day11Kt.ic" NAME="Day11Kt Coverage Results" MODIFIED="1670851557276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
