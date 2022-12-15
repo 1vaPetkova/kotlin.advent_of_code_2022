@@ -1,79 +1,90 @@
 package day12
 
 import java.io.File
+import java.util.*
 
-const val PATH = "src/main/kotlin/input/input12_ex.txt"
+const val PATH = "src/main/kotlin/input/input12.txt"
 var part = 0
-val map = readInput()
-val visited = getVisitedMap()
+val elements = readInput()
 
-fun getVisitedMap(): MutableList<MutableList<Boolean>> {
-    val visited = mutableListOf<MutableList<Boolean>>()
-    repeat(map.size) {
-        val row = mutableListOf<Boolean>()
-        map[it].forEach { _ ->
-            row.add(false)
-        }
-        visited.add(row)
-    }
-return visited
-}
+val start = setStartAndDestinationValues('S', 'a')
+val destination = setStartAndDestinationValues('E', 'z')
+var queue = ArrayDeque<Element>()
 
-val start = findPositionOf('S')
-val destination = findPositionOf('E')
-val path = StringBuilder()
-val paths = mutableListOf<String>()
-var previousElement = 'a'
 fun main() {
-    changeStartAndDestinationHeight()
-    findPath( 0, 0, ' ')
-    println(paths)
+    val tm = System.currentTimeMillis()
+    start.visited = true
+    queue.offer(start)
 
+    while (queue.isNotEmpty()) {
+        val element = queue.poll()
+        if (element == destination) break
+        addAdjacentElements(element.row, element.col)
+    }
+    println(System.currentTimeMillis() - tm)
+    println(elements.getElement(destination.row, destination.col).stepsToReach)
 }
 
 //================================================================================================================
 
-private fun findPath(row: Int, col: Int, direction: Char) {
-    if (isOutOfBounds(row, col) || visited[row][col] || !isAccessible(row, col)) return
-    path.append(direction)
+fun addAdjacentElements(row: Int, col: Int) {
+    if (shouldVisit(row, 1, col, 0)) addAdjacentElement(row, 1, col, 0)
+    if (shouldVisit(row, 0, col, 1)) addAdjacentElement(row, 0, col, 1)
+    if (shouldVisit(row, -1, col, 0)) addAdjacentElement(row, -1, col, 0)
+    if (shouldVisit(row, 0, col, -1)) addAdjacentElement(row, 0, col, -1)
+}
 
-    if (destination.first == row && destination.second == col) {
-        paths.add(path.substring(1))
-        path.deleteCharAt(path.length - 1)
-        return
+fun addAdjacentElement(row: Int, deltaRow: Int, col: Int, deltaCol: Int) {
+    val nextElement = elements.getElement(row + deltaRow, col + deltaCol)
+    nextElement.stepsToReach = elements.getElement(row, col).stepsToReach + 1
+    nextElement.visited = true
+    queue.offer(nextElement)
+}
+
+fun shouldVisit(row: Int, deltaRow: Int, col: Int, deltaCol: Int) =
+    isInBounds(row + deltaRow, col + deltaCol)
+            && isAccessible(row, deltaRow, col, deltaCol)
+            && !elements.getElement(row + deltaRow, col + deltaCol).visited
+
+private fun isAccessible(row: Int, deltaRow: Int, col: Int, deltaCol: Int) =
+    elements.getValue(row + deltaRow, col + deltaCol) - elements.getValue(row, col) <= 1
+
+private fun isInBounds(row: Int, col: Int) = row >= 0 && row < elements.size && col >= 0 && col < elements[row].size
+
+private fun setStartAndDestinationValues(char: Char, newValue: Char): Element {
+    val row = elements.indexOfFirst { it.find { e -> e.value == char } != null }
+    val col = elements[row].indexOfFirst { it.value == char }
+    val element = elements.getElement(row, col)
+    element.value = newValue
+    return element
+}
+
+private fun readInput(): List<List<Element>> = File(PATH).readLines().mapIndexed { row, line ->
+    line.toCharArray().mapIndexed { col, char ->
+        Element(row, col, char)
+    }.toList()
+}.toList()
+
+private fun List<List<Element>>.getElement(row: Int, col: Int) = this[row][col]
+private fun List<List<Element>>.getValue(row: Int, col: Int) = getElement(row, col).value
+
+data class Element(
+    val row: Int,
+    val col: Int,
+    var value: Char,
+    var visited: Boolean = false,
+    var stepsToReach: Int = 0
+) {
+
+    override fun equals(other: Any?): Boolean {
+        val element = other as Element
+        return row == element.row && col == element.col
     }
 
-    previousElement = map[row][col]
-    visited[row][col] = true
-
-    findPath( row - 1, col, 'U')
-    findPath(row + 1, col, 'D')
-    findPath( row, col - 1, 'L')
-    findPath( row, col + 1, 'R')
-
-//    map[row][col] = '-'
-    // backtracking
-
-    path.deleteCharAt(path.length - 1)
-}
-
-private fun changeStartAndDestinationHeight() {
-    map[start.first][start.second] = 'a'
-    map[destination.first][destination.second] = 'z'
-}
-
-private fun findPositionOf(char: Char): Pair<Int, Int> {
-    map.forEachIndexed { row, chars ->
-        val col = chars.indexOf(char)
-        if (col != -1) {
-            return Pair(row, col)
-        }
+    override fun hashCode(): Int {
+        var result = row
+        result = 31 * result + col
+        return result
     }
-    return Pair(0, 0)
 }
-
-private fun isAccessible(row: Int, col: Int) = map[row][col] - previousElement <= 1
-
-private fun isOutOfBounds(row: Int, col: Int) = row < 0 || row >= map.size || col < 0 || col >= map[row].size
-private fun readInput() = File(PATH).readLines().map { it.toCharArray() }
 
