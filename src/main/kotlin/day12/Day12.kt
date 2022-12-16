@@ -7,8 +7,8 @@ const val PATH = "src/main/kotlin/input/input12.txt"
 var part = 0
 val elements = readInput()
 
-var start = setStartAndDestinationValues('S', 'a')
-val destination = setStartAndDestinationValues('E', 'z')
+var start = setNewValues('S', 'a')
+val destination = setNewValues('E', 'z')
 var queue = ArrayDeque<Element>()
 
 
@@ -90,7 +90,7 @@ private fun isAccessible(row: Int, deltaRow: Int, col: Int, deltaCol: Int) =
 
 private fun isInBounds(row: Int, col: Int) = row >= 0 && row < elements.size && col >= 0 && col < elements[row].size
 
-private fun setStartAndDestinationValues(char: Char, newValue: Char): Element {
+private fun setNewValues(char: Char, newValue: Char): Element {
     val row = elements.indexOfFirst { it.find { e -> e.value == char } != null }
     val col = elements[row].indexOfFirst { it.value == char }
     val element = elements.getElement(row, col)
